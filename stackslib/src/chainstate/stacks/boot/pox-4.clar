@@ -49,6 +49,17 @@
 ;; (0x05 and 0x06 have 32-byte hashbytes)
 (define-constant MAX_ADDRESS_VERSION_BUFF_32 u6)
 
+;; PoX mainnet constants
+;; Min/max number of reward cycles uSTX can be locked for
+(define-constant MIN_POX_REWARD_CYCLES u1)
+(define-constant MAX_POX_REWARD_CYCLES u12)
+(define-constant PREPARE_CYCLE_LENGTH (if is-in-mainnet u100 u50))
+(define-constant REWARD_CYCLE_LENGTH (if is-in-mainnet u2100 u1050))
+
+;; Stacking thresholds
+(define-constant STACKING_THRESHOLD_25 (if is-in-mainnet u20000 u8000))
+(define-constant STACKING_THRESHOLD_100 (if is-in-mainnet u5000 u2000))
+
 ;; Data vars that store a copy of the burnchain configuration.
 ;; Implemented as data-vars, so that different configurations can be
 ;; used in e.g. test harnesses.
@@ -187,6 +198,19 @@
 ;; The stackers' aggregate public key
 ;;   for the given reward cycle
 (define-map aggregate-public-keys uint (buff 33))
+
+;; MOCK
+;; Allow to set stx-account details for any user
+;; These values are used for PoX only
+(define-map mock-stx-account-details principal {unlocked: uint, locked: uint, unlock-height: uint})
+
+(define-read-only (get-stx-account (user principal))
+    (default-to (stx-account user) (map-get? mock-stx-account-details user)))
+
+(define-public (mock-set-stx-account (user principal) (details {unlocked: uint, locked: uint, unlock-height: uint}))
+    (if (map-set mock-stx-account-details user details)
+         (ok true) (err u9999))) ;; define manually the error type
+;; MOCK END
 
 ;; What's the reward cycle number of the burnchain block height?
 ;; Will runtime-abort if height is less than the first burnchain block (this is intentional)
@@ -556,8 +580,8 @@
                 (err ERR_INVALID_START_BURN_HEIGHT))
 
       ;; must be called directly by the tx-sender or by an allowed contract-caller
-      (asserts! (check-caller-allowed)
-                (err ERR_STACKING_PERMISSION_DENIED))
+      ;; (asserts! (check-caller-allowed)
+      ;;           (err ERR_STACKING_PERMISSION_DENIED))
 
       ;; tx-sender principal must not be stacking
       (asserts! (is-none (get-stacker-info tx-sender))
