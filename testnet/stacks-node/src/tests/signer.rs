@@ -5,6 +5,8 @@ use std::{env, thread};
 use clarity::vm::types::QualifiedContractIdentifier;
 use libsigner::{RunningSigner, Signer, StackerDBEventReceiver};
 use stacks::chainstate::stacks::StacksPrivateKey;
+use stacks::chainstate::stacks::boot::POX_4_VOTE_CODE;
+use stacks::util_lib::boot::boot_code_id;
 use stacks_common::types::chainstate::StacksAddress;
 use stacks_signer::config::Config as SignerConfig;
 use stacks_signer::runloop::RunLoopCommand;
@@ -166,28 +168,6 @@ fn setup_stx_btc_node(
     }
 }
 
-/// Helper function for building our fake pox contract
-pub fn build_pox_contract(num_signers: u32) -> String {
-    let mut pox_contract = String::new(); // "
-    pox_contract += r#"
-;; data vars
-;;
-(define-data-var aggregate-public-key (optional (buff 33)) none)
-"#;
-    pox_contract += &format!("(define-data-var num-signers uint u{num_signers})\n");
-    pox_contract += r#"
-
-;; read only functions
-;;
-
-(define-read-only (get-aggregate-public-key (reward-cycle uint))
-    (var-get aggregate-public-key)
-)
-
-"#;
-    pox_contract
-}
-
 #[test]
 #[ignore]
 fn test_stackerdb_dkg() {
@@ -216,9 +196,9 @@ fn test_stackerdb_dkg() {
     let (mut conf, _) = neon_integration_test_conf();
 
     // Build our simulated pox-4 stacks contract TODO: replace this with the real deal?
-    let pox_contract = build_pox_contract(num_signers);
-    let pox_contract_id =
-        QualifiedContractIdentifier::new(to_addr(&publisher_private_key).into(), "pox-4".into());
+    let pox_contract = POX_4_VOTE_CODE.to_string();
+    let pox_contract_id = boot_code_id("pox-4-vote".into(), false);
+
     // Build the stackerdb contract
     let stackerdb_contract = build_stackerdb_contract(&signer_stacks_addresses);
     let stacker_db_contract_id = QualifiedContractIdentifier::new(
