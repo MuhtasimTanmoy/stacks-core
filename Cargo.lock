@@ -805,7 +805,7 @@ checksum = "702fc72eb24e5a1e48ce58027a675bc24edd52096d5397d4aea7c6dd9eca0bd1"
 [[package]]
 name = "clar2wasm"
 version = "0.1.0"
-source = "git+https://github.com/stacks-network//clarity-wasm?branch=test/always-wasm#ac3ff5eb061d83d8c96b915aa957c7088bec0a03"
+source = "git+https://github.com/stacks-network//clarity-wasm?branch=test/always-wasm#9b02292c9e9956596ed056fec70108ad15a4fa8c"
 dependencies = [
  "chrono",
  "clap 4.4.18",
@@ -845,7 +845,7 @@ dependencies = [
 [[package]]
 name = "clarity"
 version = "2.2.0"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#55f7c2199bf2037316f45658b169c872c7910c06"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
 dependencies = [
  "integer-sqrt",
  "lazy_static",
@@ -2373,13 +2373,13 @@ dependencies = [
  "stackslib 0.0.1 (git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm)",
  "thiserror",
  "tiny_http",
- "wsts 6.1.0",
+ "wsts",
 ]
 
 [[package]]
 name = "libsigner"
 version = "0.0.1"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#55f7c2199bf2037316f45658b169c872c7910c06"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
 dependencies = [
  "clarity 2.2.0 (git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm)",
  "libc",
@@ -2393,8 +2393,10 @@ dependencies = [
  "slog",
  "slog-term",
  "stacks-common 0.0.2 (git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm)",
+ "stackslib 0.0.1 (git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm)",
  "thiserror",
  "tiny_http",
+ "wsts",
 ]
 
 [[package]]
@@ -2424,7 +2426,7 @@ dependencies = [
 [[package]]
 name = "libstackerdb"
 version = "0.0.1"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#55f7c2199bf2037316f45658b169c872c7910c06"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
 dependencies = [
  "clarity 2.2.0 (git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm)",
  "secp256k1",
@@ -3045,7 +3047,7 @@ dependencies = [
 [[package]]
 name = "pox-locking"
 version = "2.4.0"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#55f7c2199bf2037316f45658b169c872c7910c06"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
 dependencies = [
  "clarity 2.2.0 (git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm)",
  "slog",
@@ -4074,13 +4076,13 @@ dependencies = [
  "slog-term",
  "time 0.2.27",
  "winapi 0.3.9",
- "wsts 6.1.0",
+ "wsts",
 ]
 
 [[package]]
 name = "stacks-common"
 version = "0.0.2"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#55f7c2199bf2037316f45658b169c872c7910c06"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
 dependencies = [
  "chrono",
  "curve25519-dalek",
@@ -4104,7 +4106,7 @@ dependencies = [
  "slog-term",
  "time 0.2.27",
  "winapi 0.3.9",
- "wsts 5.0.0",
+ "wsts",
 ]
 
 [[package]]
@@ -4142,7 +4144,7 @@ dependencies = [
  "tracing",
  "tracing-subscriber",
  "warp",
- "wsts 6.1.0",
+ "wsts",
 ]
 
 [[package]]
@@ -4172,13 +4174,13 @@ dependencies = [
  "toml 0.5.11",
  "tracing",
  "tracing-subscriber",
- "wsts 6.1.0",
+ "wsts",
 ]
 
 [[package]]
 name = "stacks-signer"
 version = "0.0.1"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#55f7c2199bf2037316f45658b169c872c7910c06"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
 dependencies = [
  "backoff",
  "bincode",
@@ -4202,7 +4204,7 @@ dependencies = [
  "toml 0.5.11",
  "tracing",
  "tracing-subscriber",
- "wsts 5.0.0",
+ "wsts",
 ]
 
 [[package]]
@@ -4250,13 +4252,13 @@ dependencies = [
  "time 0.2.27",
  "url",
  "winapi 0.3.9",
- "wsts 6.1.0",
+ "wsts",
 ]
 
 [[package]]
 name = "stackslib"
 version = "0.0.1"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#55f7c2199bf2037316f45658b169c872c7910c06"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
 dependencies = [
  "chrono",
  "clar2wasm",
@@ -4293,7 +4295,7 @@ dependencies = [
  "time 0.2.27",
  "url",
  "winapi 0.3.9",
- "wsts 5.0.0",
+ "wsts",
 ]
 
 [[package]]
@@ -4383,7 +4385,7 @@ dependencies = [
 [[package]]
 name = "stx-genesis"
 version = "0.1.0"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#55f7c2199bf2037316f45658b169c872c7910c06"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
 dependencies = [
  "libflate",
  "sha2 0.10.8",
@@ -5776,28 +5778,6 @@ checksum = "d59cefebd0c892fa2dd6de581e937301d8552cb44489cdff035c6187cb63fa5e"
 dependencies = [
  "winapi 0.2.8",
  "winapi-build",
-]
-
-[[package]]
-name = "wsts"
-version = "5.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2c250118354755b4abb091a83cb8d659b511c0ae211ccdb3b1254e3db199cb86"
-dependencies = [
- "aes-gcm 0.10.3",
- "bs58 0.5.0",
- "hashbrown 0.14.3",
- "hex",
- "num-traits",
- "p256k1 6.0.0",
- "polynomial",
- "primitive-types",
- "rand_core 0.6.4",
- "serde",
- "sha2 0.10.8",
- "thiserror",
- "tracing",
- "tracing-subscriber",
 ]
 
 [[package]]
