@@ -805,7 +805,7 @@ checksum = "702fc72eb24e5a1e48ce58027a675bc24edd52096d5397d4aea7c6dd9eca0bd1"
 [[package]]
 name = "clar2wasm"
 version = "0.1.0"
-source = "git+https://github.com/stacks-network//clarity-wasm?branch=test/always-wasm#9b02292c9e9956596ed056fec70108ad15a4fa8c"
+source = "git+https://github.com/stacks-network//clarity-wasm?branch=test/always-wasm#6eb68483756a19d1dec1578e7e77e84f841f3dac"
 dependencies = [
  "chrono",
  "clap 4.4.18",
@@ -845,7 +845,7 @@ dependencies = [
 [[package]]
 name = "clarity"
 version = "2.2.0"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#c36dd9a4b2dec16994833803fbf28ab6df427cdf"
 dependencies = [
  "integer-sqrt",
  "lazy_static",
@@ -2379,7 +2379,7 @@ dependencies = [
 [[package]]
 name = "libsigner"
 version = "0.0.1"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#c36dd9a4b2dec16994833803fbf28ab6df427cdf"
 dependencies = [
  "clarity 2.2.0 (git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm)",
  "libc",
@@ -2426,7 +2426,7 @@ dependencies = [
 [[package]]
 name = "libstackerdb"
 version = "0.0.1"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#c36dd9a4b2dec16994833803fbf28ab6df427cdf"
 dependencies = [
  "clarity 2.2.0 (git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm)",
  "secp256k1",
@@ -3047,7 +3047,7 @@ dependencies = [
 [[package]]
 name = "pox-locking"
 version = "2.4.0"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#c36dd9a4b2dec16994833803fbf28ab6df427cdf"
 dependencies = [
  "clarity 2.2.0 (git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm)",
  "slog",
@@ -3985,9 +3985,9 @@ dependencies = [
 
 [[package]]
 name = "smallvec"
-version = "1.12.0"
+version = "1.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2593d31f82ead8df961d8bd23a64c2ccf2eb5dd34b0a34bfb4dd54011c72009e"
+checksum = "e6ecd384b10a64542d77071bd64bd7b231f4ed5940fba55e98c3de13824cf3d7"
 
 [[package]]
 name = "socket2"
@@ -4082,7 +4082,7 @@ dependencies = [
 [[package]]
 name = "stacks-common"
 version = "0.0.2"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#c36dd9a4b2dec16994833803fbf28ab6df427cdf"
 dependencies = [
  "chrono",
  "curve25519-dalek",
@@ -4180,7 +4180,7 @@ dependencies = [
 [[package]]
 name = "stacks-signer"
 version = "0.0.1"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#c36dd9a4b2dec16994833803fbf28ab6df427cdf"
 dependencies = [
  "backoff",
  "bincode",
@@ -4258,7 +4258,7 @@ dependencies = [
 [[package]]
 name = "stackslib"
 version = "0.0.1"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#c36dd9a4b2dec16994833803fbf28ab6df427cdf"
 dependencies = [
  "chrono",
  "clar2wasm",
@@ -4385,7 +4385,7 @@ dependencies = [
 [[package]]
 name = "stx-genesis"
 version = "0.1.0"
-source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#a82d541fe5245811e1681d284fe3121f9a2a3a8c"
+source = "git+https://github.com/stacks-network//stacks-core?branch=test/always-wasm#c36dd9a4b2dec16994833803fbf28ab6df427cdf"
 dependencies = [
  "libflate",
  "sha2 0.10.8",
@@ -4984,9 +4984,9 @@ checksum = "711b9620af191e0cdc7468a8d14e709c3dcdb115b36f838e601583af800a370a"
 
 [[package]]
 name = "uuid"
-version = "1.6.1"
+version = "1.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5e395fcf16a7a3d8127ec99782007af141946b4795001f876d54fb0d55978560"
+checksum = "f00cc9702ca12d3c81455259621e676d0f7251cec66a21e98fe2e9a37db93b2a"
 
 [[package]]
 name = "valuable"
